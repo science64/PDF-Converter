@@ -1,9 +1,9 @@
 __author__ = "Süleyman Bozkurt and ChatGPT"
-__version__ = "v1.5"
+__version__ = "v1.6"
 __maintainer__ = "Süleyman Bozkurt"
 __email__ = "sbozkurt.mbg@gmail.com"
 __date__ = '28.12.2022'
-__update__ = '11.01.2023'
+__update__ = '12.01.2023'
 
 from tkinter import *
 import tkinter as tk
@@ -168,6 +168,44 @@ class PDF2Doc(ttk.Frame):
                                         variable=self.conversion_method_var)
         self.ocr_radio.pack()
 
+        self.language = StringVar()
+        self.language.set("English")  # default value
+
+        language_formats = ["English", "German", "Turkish",
+                            "French", "Spanish", "Italian",
+                            "Polish", "Russian", "Ukrainian", "Croatian",
+                            "Arabic", "Chinese", "Hindi"] # 13 different language format so far supported!
+
+        self.options = OptionMenu(self, self.language, *language_formats)
+        self.options.pack()
+
+        if self.language.get() == 'English':
+            self.LangPref = 'eng'
+        elif self.language.get() == 'French':
+            self.LangPref = 'fra'
+        elif self.language.get() == 'German':
+            self.LangPref = 'deu'
+        elif self.language.get() == 'Turkish':
+            self.LangPref = 'tur'
+        elif self.language.get() == 'Polish':
+            self.LangPref = 'pol'
+        elif self.language.get() == 'Spanish':
+            self.LangPref = 'spa'
+        elif self.language.get() == 'Italian':
+            self.LangPref = 'ita'
+        elif self.language.get() == 'Arabic':
+            self.LangPref = 'ara'
+        elif self.language.get() == 'Chinese':
+            self.LangPref = 'chi_sim'
+        elif self.language.get() == 'Hindi':
+            self.LangPref = 'hin'
+        elif self.language.get() == 'Croatian':
+            self.LangPref = 'hrv'
+        elif self.language.get() == 'Russian':
+            self.LangPref = 'rus'
+        elif self.language.get() == 'Ukrainian':
+            self.LangPref = 'ukr'
+
         # self.output_text = tk.Text(root, height=40, width=30, font=("Helvetica", 14))
         # self.output_text.pack(padx=10, pady=10)
         self.output_frame = tk.Frame(self)
@@ -241,6 +279,7 @@ class PDF2Doc(ttk.Frame):
             else:
                 # Use OCR to convert the PDF
                 self.output_text.insert(tk.END, "- Convertion method: OCR Converter!\n")
+                self.output_text.insert(tk.END, "- Converting PDF...\n")
 
                 with TemporaryDirectory() as temp_dir:
                     # Convert the PDF to a sequence of images
@@ -254,8 +293,13 @@ class PDF2Doc(ttk.Frame):
 
                     # Extract the text from each image and add it to the Word document as a paragraph
                     for image in images:
-                        text = pytesseract.image_to_string(image)
+                        text = pytesseract.image_to_string(image, lang=self.LangPref)
                         document.add_paragraph(text)
+
+                core_properties = document.core_properties
+                core_properties.author = 'PDF Converter v1.6 by Suleyman Bozkurt'
+                core_properties.comments = 'PDF converted into DOCX with PDF Converter v1.6'
+                core_properties.title = pdf_name
 
                 # Save the Word document
                 document.save(self.docx_path)
@@ -330,6 +374,7 @@ class PDF2Image(ttk.Frame):
                     self.output_file = f'{self.image_path}.{out_format}'
                 else:
                     self.output_file = f'{self.image_path}_page_{i+1}.{out_format}'
+
                 page.save(self.output_file, out_format)
                 self.output_text.insert(tk.END, f"- Saved here: {self.output_file}\n")
         except Exception as e:
@@ -400,7 +445,7 @@ class MyWindow():
         self.notebook.pack(expand=1, fill="both")
         self.PDFConverterFrame = PDF2Doc(self.notebook)
         self.PDFConverterFrame.bind("<<NotebookTabChanged>>", self.on_tab_selected)
-        self.notebook.add(self.PDFConverterFrame, text="PDF to DOC")
+        self.notebook.add(self.PDFConverterFrame, text="PDF to Docx")
 
         self.PDFimageFrame = PDF2Image(self.notebook)
         self.notebook.add(self.PDFimageFrame, text="PDF to Image")
@@ -418,7 +463,7 @@ class MyWindow():
 
 if __name__ == '__main__':
     root = Tk()
-    root.title("PDF Converter v1.5 @2023", )
+    root.title("PDF Converter v1.6 @2023", )
     root.geometry("960x600+480+250")
     root.resizable(0, 0)
     root.wm_iconbitmap('./files/icon.ico')
