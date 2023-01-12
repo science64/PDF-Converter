@@ -1,0 +1,13 @@
+*.py linguist-detectable=true
+*.js linguist-detectable=false
+*.html linguist-detectable=false
+*.xml linguist-detectable=false
+*.c linguist-detectable=false
+*.exe linguist-detectable=false
+*.dll linguist-detectable=false
+*.h linguist-detectable=false
+*.jar linguist-detectable=false
+*.roff linguist-detectable=false
+*.troff linguist-detectable=false
+*.nroff linguist-detectable=false
+*.1 linguist-detectable=false

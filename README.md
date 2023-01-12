@@ -1,16 +1,29 @@
-# PDF-2-Word-Converter
-PDF-2-Word-Converter...
+# PDF-Converter
 
-If you concern about your PDF files uploading some online website, then here is the nice tool that you can install in your PC or using python files right away convert your PDF files into Word (DOC or DOCX) format. 
+![<img src="image1.png" width="25"/>](./example%20files/image.png)
 
-It has 2 functionality using open source platforms; poppler and tesseract. Poppler is used for proper PDF files that is converted from word before and if you have scanned or old formated PDF files, you need to have OCR converter in that case tesseract will be good tool to use. These both tool is included in the engine of the tool. Depending on your files, you can choose either option to use.
+If you concern about your PDF files uploading some online website, then here is the nice tool that you can install in your PC or using python files right away convert your PDF files into Word (Docx) format and Images. Supported image formats are 'TIFF', 'JPEG', 'PNG', 'EPS', 'BMP' and 'ICO'. New formats might be added. 
 
-In the future; PDF to any picture format converter will be added and tool will be updated!
+It has 2 functionality for converting PDF to word documents using open source platforms/modules including; pdf2docx, pdf2image, poppler and tesseract. 
 
-Video description how to use it: ...
+It can easily convert PDF files into word documents if the file were converted from word file before. 
+Scanned PDF files can also be converted into word documents using OCR (Optical Character Recognition) technology. You just need to choose language of the scanned file. It supports 13 different common languages. 
+
+```
+language_formats = ["English", "German", "Turkish",
+                    "French", "Spanish", "Italian",
+                    "Polish", "Russian", "Ukrainian", "Croatian",
+                    "Arabic", "Chinese", "Hindi"] # 13 different language format so far supported!
+```
+
+Depending on your files, you can choose either option to use.
+
+Video description how to install and use it: ...
+
+To download EXE file for Windows: https://www.dropbox.com/s/0t432pnuqek3s32/PDF%20Converter.zip?dl=0  (you need to export into a folder from ZIP file).
+
+This project is supported by ChatGPT for making the GUI faster.
 
 It is under MIT copyright. You can use it and share with others. 
 
-If you find it useful and wants me to improve, please reach out me! You can also support me to continue building similar usefull tools.
-
-
+If you find it useful and wants me to improve, please reach out! You can also support me If you find it useful.
