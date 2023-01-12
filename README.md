@@ -20,8 +20,6 @@ Depending on your files, you can choose either option to use.
 
 Video description how to install and use it: ...
 
-To download EXE file for Windows: https://www.dropbox.com/s/0t432pnuqek3s32/PDF%20Converter.zip?dl=0  (you need to export into a folder from ZIP file).
-
 This project is supported by ChatGPT for making the GUI faster.
 
 It is under MIT copyright. You can use it and share with others. 
