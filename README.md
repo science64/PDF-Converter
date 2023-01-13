@@ -20,6 +20,14 @@ Depending on your files, you can choose either option to use.
 
 Video description how to install and use it [![Video description how to install and use it](./example%20files/youtubevideo.png)](https://www.youtube.com/watch?v=uhg5xvLCUh8 "Video description how to install and use it")
 
+Python install codes:
+```
+python -m pip install -r requirements.txt  #install packages
+python main.py  #run the program
+
+# you might need to run python3 instead python in mac and linux system.
+```
+
 This project is supported by ChatGPT for making the GUI faster.
 
 It is under MIT copyright. You can use it and share with others. 
