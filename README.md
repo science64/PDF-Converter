@@ -18,7 +18,7 @@ language_formats = ["English", "German", "Turkish",
 
 Depending on your files, you can choose either option to use.
 
-Video description how to install and use it: ...
+Video description how to install and use it [![Video description how to install and use it](./example%20files/youtubevideo.png)](https://www.youtube.com/watch?v=uhg5xvLCUh8 "Video description how to install and use it")
 
 This project is supported by ChatGPT for making the GUI faster.
 
