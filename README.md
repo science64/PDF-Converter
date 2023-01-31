@@ -32,6 +32,6 @@ python main.py  #run the program
 
 This project is supported by ChatGPT for making the GUI faster.
 
-It is under MIT copyright. You can use it and share with others. 
+It is under MIT copyright. You can use it and share with others.
 
-If you find it useful and wants me to improve, please reach out! You can also support me If you find it useful.
+If you find it useful and wants me to improve, please reach out! You can also support me via https://www.buymeacoffee.com/science64
