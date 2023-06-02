@@ -13,7 +13,7 @@ Scanned PDF files can also be converted into word documents using OCR (Optical C
 language_formats = ["English", "German", "Turkish",
                     "French", "Spanish", "Italian",
                     "Polish", "Russian", "Ukrainian", "Croatian",
-                    "Arabic", "Chinese", "Hindi"] # 13 different language format so far supported!
+                    "Arabic", "Chinese", "Hindi", "Persian"] # 14 different language format so far supported!
 ```
 
 Depending on your files, you can choose either option to use.
