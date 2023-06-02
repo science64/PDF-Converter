@@ -1,9 +1,9 @@
 __author__ = "Süleyman Bozkurt and ChatGPT"
-__version__ = "v1.6"
+__version__ = "v1.67"
 __maintainer__ = "Süleyman Bozkurt"
 __email__ = "sbozkurt.mbg@gmail.com"
 __date__ = '28.12.2022'
-__update__ = '12.01.2023'
+__update__ = '02.06.2023'
 
 from tkinter import *
 import tkinter as tk
@@ -174,7 +174,7 @@ class PDF2Doc(ttk.Frame):
         language_formats = ["English", "German", "Turkish",
                             "French", "Spanish", "Italian",
                             "Polish", "Russian", "Ukrainian", "Croatian",
-                            "Arabic", "Chinese", "Hindi"] # 13 different language format so far supported!
+                            "Arabic", "Chinese", "Hindi", "Persian"] # 13 different language format so far supported!
 
         self.options = OptionMenu(self, self.language, *language_formats)
         self.options.pack()
@@ -205,7 +205,9 @@ class PDF2Doc(ttk.Frame):
             self.LangPref = 'rus'
         elif self.language.get() == 'Ukrainian':
             self.LangPref = 'ukr'
-
+        elif self.language.get() == 'Persian':
+            self.LangPref = 'fas'
+            
         # self.output_text = tk.Text(root, height=40, width=30, font=("Helvetica", 14))
         # self.output_text.pack(padx=10, pady=10)
         self.output_frame = tk.Frame(self)
