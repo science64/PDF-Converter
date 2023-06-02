@@ -1,5 +1,5 @@
 __author__ = "Süleyman Bozkurt and ChatGPT"
-__version__ = "v1.67"
+__version__ = "v1.7"
 __maintainer__ = "Süleyman Bozkurt"
 __email__ = "sbozkurt.mbg@gmail.com"
 __date__ = '28.12.2022'
